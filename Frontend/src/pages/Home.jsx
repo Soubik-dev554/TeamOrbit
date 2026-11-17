@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import teamOrbitLogo from '../assets/teamorbit-logo.png';
 
 export default function Home() {
     return (
@@ -8,8 +9,12 @@ export default function Home() {
             <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
                 <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
-                    <Link to="/" className="text-2xl font-bold tracking-tight text-indigo-600">
-                        TeamOrbit<span className="text-slate-900">.</span>
+                    <Link to="/" aria-label="TeamOrbit home" className="flex shrink-0 items-center">
+                        <img
+                            src={teamOrbitLogo}
+                            alt="TeamOrbit — Connect Teams. Manage Work. Achieve More."
+                            className="h-12 w-auto max-w-[190px] object-contain"
+                        />
                     </Link>
 
                     <div className="hidden items-center gap-8 md:flex">
@@ -279,9 +284,13 @@ export default function Home() {
                 <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row">
 
                     <div>
-                        <h2 className="text-2xl font-bold">
-                            TeamOrbit<span className="text-indigo-400">.</span>
-                        </h2>
+                        <Link to="/" aria-label="TeamOrbit home" className="inline-flex rounded-lg bg-white p-2">
+                            <img
+                                src={teamOrbitLogo}
+                                alt="TeamOrbit"
+                                className="h-14 w-auto max-w-[210px] object-contain"
+                            />
+                        </Link>
                         <p className="mt-3 text-sm text-slate-400">
                             Manage your team. Achieve more together.
                         </p>

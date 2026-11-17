@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import api from '../api';
+import teamOrbitLogo from '../assets/teamorbit-icon.png';
 
 export default function SuperAdminDashboard() {
     const navigate = useNavigate();
@@ -451,6 +452,18 @@ export default function SuperAdminDashboard() {
                 <header className="flex flex-col justify-between gap-4 p-4 sm:flex-row sm:items-center sm:p-6">
 
                     <div>
+                        {/* TeamOrbit Brand */}
+                        <div className="mb-4 flex items-center gap-3">
+                            <img
+                                src={teamOrbitLogo}
+                                alt="TeamOrbit"
+                                className="h-12 w-12 shrink-0 object-contain"
+                            />
+                            <span className="text-xl font-extrabold tracking-tight text-slate-900">
+                                TeamOrbit
+                            </span>
+                        </div>
+
                         <div className="mb-2 flex items-center gap-2">
                             <span className="h-2 w-2 rounded-full bg-emerald-500" />
 

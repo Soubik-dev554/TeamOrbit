@@ -2,6 +2,7 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import api from '../api';
 import { useAuth } from '../context/AuthContext';
 import NotificationBell from './NotificationBell';
+import teamOrbitLogo from '../assets/teamorbit-icon.png';
 
 export default function Layout() {
   const { user, setUser } = useAuth();
@@ -38,21 +39,22 @@ export default function Layout() {
         md:px-[17px] md:py-7
       ">
 
-        {/* Brand */}
-        <div className="flex items-center gap-3 px-5 py-4 md:px-[9px] md:pb-[42px] md:pt-0">
-          <span className="
-            grid h-9 w-9 shrink-0 place-items-center rounded-xl
-            bg-[#6858df] text-xl font-bold text-white shadow-md
-          ">
-            T
-          </span>
+        {/* TeamOrbit Brand */}
+        <div className="flex items-center gap-2 px-5 py-4 md:px-[5px] md:pb-[42px] md:pt-0">
+
+          <img
+            src={teamOrbitLogo}
+            alt="TeamOrbit Logo"
+            className="h-11 w-11 shrink-0 object-contain"
+          />
 
           <span className="font-['Manrope'] text-[19px] font-extrabold tracking-tight">
-            TaskFlow
+            TeamOrbit
             <small className="mt-0.5 block text-[9px] font-bold tracking-[1.6px] text-[#a0a5b7]">
               WORKSPACE
             </small>
           </span>
+
         </div>
 
         {/* Navigation */}
