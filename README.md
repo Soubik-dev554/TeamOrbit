@@ -1,6 +1,6 @@
 # TeamOrbit
 
-## A Multi-Tenant SaaS Task Management Platform
+**A Multi-Tenant SaaS Task Management Platform**
 
 TeamOrbit is a full-stack task and project management application built
 with the MERN stack. It helps organizations organize teams, manage
@@ -15,36 +15,42 @@ to keep each company's workspace separate.
 
 ### Role-Based Access
 
-- **Super Admin:** Manage organizations and oversee platform users.
-- **Company Admin:** Manage employees, projects, tasks, and team
+-   **Super Admin:** Manage organizations and oversee platform users.
+-   **Company Admin:** Manage employees, projects, tasks, and team
     activity within their organization.
-- **Employee:** View assigned tasks, update task status, and
+-   **Employee:** View assigned tasks, update task status, and
     collaborate on work.
 
 ### Organization & Employee Management
 
-Multi-tenant organization structure.Organization registration and administration.Invitation-based employee onboarding.Email OTP verification during employee registration.Employee activation and suspension.
+-   Multi-tenant organization structure.
+-   Organization registration and administration.
+-   Invitation-based employee onboarding.
+-   Email OTP verification during employee registration.
+-   Employee activation and suspension.
 
 ### Project & Task Management
 
--Create and manage projects.
--Create, assign, and track tasks.
--Set task priorities, statuses, and due dates.
--Filter and search tasks.
--View project and task progress.
+-   Create and manage projects.
+-   Create, assign, and track tasks.
+-   Set task priorities, statuses, and due dates.
+-   Filter and search tasks.
+-   View project and task progress.
 
 ### Collaboration & Visibility
 
-- Task comments.
-- Notifications for relevant task activity.
--Activity logs for tracking important actionsDedicated dashboards for different.
+-   Task comments.
+-   Notifications for relevant task activity.
+-   Activity logs for tracking important actions.
+-   Dedicated dashboards for different roles.
 
 ### Authentication & Security
 
--JWT-based authentication using HTTP-only cookRole-based route protection.
--Password reset functionality.
--Email verification and invitation flow.
--Organization-scoped access to company data.
+-   JWT-based authentication using HTTP-only cookies.
+-   Role-based route protection.
+-   Password reset functionality.
+-   Email verification and invitation flow.
+-   Organization-scoped access to company data.
 
 ## Technology Stack
 
@@ -87,9 +93,11 @@ TeamOrbit/
 
 ### Prerequisites
 
-Install the following before running the projectNode.js and npm
-MongoDB database (local MongoDB or MongoDB Atlas)
- Git
+Install the following before running the project:
+
+-   Node.js and npm
+-   MongoDB database (local MongoDB or MongoDB Atlas)
+-   Git
 
 ### 1. Clone the repository
 
@@ -151,12 +159,14 @@ Open the local frontend address printed by Vite (commonly
 
 ## Environment & Deployment Notes
 
-Configure the production frontend URL in the backend environment so
-invitation links point to the deployed application.
- Configure your production database, JWT secret, and Brevo sender credentials securely.
-  Use HTTPS in production.
-   Keep environment files out of version control.
-   Ensure the frontend API base URL points to the deployed backend in production.
+-   Configure the production frontend URL in the backend environment so
+    invitation links point to the deployed application.
+-   Configure your production database, JWT secret, and Brevo sender
+    credentials securely.
+-   Use HTTPS in production.
+-   Keep environment files out of version control.
+-   Ensure the frontend API base URL points to the deployed backend in
+    production.
 
 ## Security
 
