@@ -2,6 +2,12 @@
 
 **A Multi-Tenant SaaS Task Management Platform**
 
+## Homepage Preview
+
+The following preview combines the original TeamOrbit homepage screenshots in page order.
+
+![TeamOrbit Homepage Preview](screenshots/homepage-preview.png)
+
 TeamOrbit is a full-stack task and project management application built
 with the MERN stack. It helps organizations organize teams, manage
 projects, assign work, monitor progress, and collaborate through a
