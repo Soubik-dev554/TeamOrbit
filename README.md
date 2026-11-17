@@ -54,14 +54,14 @@ to keep each company's workspace separate.
 
 ## Technology Stack
 
-  Area             Technologies
-  ---------------- ------------------------------------------
-  Frontend         React, Vite, Tailwind CSS
-  Backend          Node.js, Express.js
-  Database         MongoDB, Mongoose
-  Authentication   JSON Web Tokens (JWT), HTTP-only cookies
-  Email            Brevo API
-  HTTP Requests    Axios
+| Area | Technologies |
+|---|---|
+| Frontend | React, Vite, Tailwind CSS |
+| Backend | Node.js, Express.js |
+| Database | MongoDB, Mongoose |
+| Authentication | JSON Web Tokens (JWT), HTTP-only cookies |
+| Email | Brevo API |
+| HTTP Requests | Axios |
 
 ## Project Structure
 
@@ -182,6 +182,7 @@ richer reporting, and additional collaboration tools.
 
 ## Author
 
-### Soubik Jana
+**Soubik Jana**
 
 GitHub: [@Soubik-dev554](https://github.com/Soubik-dev554)
+
