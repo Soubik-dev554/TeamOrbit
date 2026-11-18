@@ -33,7 +33,7 @@ export default function ResetPassword() {
             setLoading(true);
 
             const response = await fetch(
-                `http://localhost:5000/api/auth/reset-password/${encodeURIComponent(token)}`,
+                `https://efforts-after-renew-lawsuit.trycloudflare.com/api/auth/reset-password/${encodeURIComponent(token)}`,
                 {
                     method: 'POST',
                     headers: {
