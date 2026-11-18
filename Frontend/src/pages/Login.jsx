@@ -1,11 +1,9 @@
-
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../api';
 import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
-
     const [form, setForm] = useState({
         email: '',
         password: ''
@@ -17,7 +15,6 @@ const Login = () => {
     const { setUser } = useAuth();
     const navigate = useNavigate();
 
-
     const handleChange = (e) => {
         const { name, value } = e.target;
 
@@ -26,7 +23,6 @@ const Login = () => {
             [name]: value
         });
     };
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -37,9 +33,16 @@ const Login = () => {
         try {
             const response = await api.post('/auth/login', form);
 
-            setUser(response.data.user);
+            const user = response.data.user;
 
-            navigate('/');
+            setUser(user);
+
+            // Redirect users according to their role
+            if (user.role === 'superadmin') {
+                navigate('/superadmin', { replace: true });
+            } else {
+                navigate('/dashboard', { replace: true });
+            }
 
         } catch (err) {
             setError(
@@ -49,7 +52,6 @@ const Login = () => {
             setBusy(false);
         }
     };
-
 
     return (
         <div className="auth-page">
@@ -118,7 +120,7 @@ const Login = () => {
                     <Link to="/register">
                         Create an account
                     </Link>
-                </p>
+        </p>
 
             </section>
 
@@ -131,4 +133,3 @@ const Login = () => {
 };
 
 export default Login;
-

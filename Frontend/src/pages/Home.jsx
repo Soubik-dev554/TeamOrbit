@@ -6,42 +6,41 @@ export default function Home() {
         <div className="min-h-screen bg-white text-slate-900">
 
             {/* Navbar */}
-            <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-                <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">            <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
-                    <Link to="/" aria-label="TeamOrbit home" className="flex shrink-0 items-center">
-                        <img
-                            src={teamOrbitLogo}
-                            alt="TeamOrbit — Connect Teams. Manage Work. Achieve More."
-                            className="h-12 w-auto max-w-[190px] object-contain"
-                        />
+                <Link to="/" aria-label="TeamOrbit home" className="flex shrink-0 items-center">
+                    <img
+                        src={teamOrbitLogo}
+                        alt="TeamOrbit — Connect Teams. Manage Work. Achieve More."
+                        className="h-12 w-auto max-w-[190px] object-contain"
+                    />
+                </Link>
+
+                <div className="hidden items-center gap-8 md:flex">
+                    <a href="#home" className="text-sm font-medium hover:text-indigo-600">Home</a>
+                    <a href="#features" className="text-sm font-medium hover:text-indigo-600">Features</a>
+                    <a href="#how-it-works" className="text-sm font-medium hover:text-indigo-600">How It Works</a>
+                    <a href="#pricing" className="text-sm font-medium hover:text-indigo-600">Pricing</a>
+                    <a href="#about" className="text-sm font-medium hover:text-indigo-600">About</a>
+                </div>
+
+                <div className="flex items-center gap-3">
+                    <Link
+                        to="/login"
+                        className="hidden rounded-lg px-4 py-2 text-sm font-semibold hover:bg-slate-100 sm:block"
+                    >
+                        Login
                     </Link>
 
-                    <div className="hidden items-center gap-8 md:flex">
-                        <a href="#home" className="text-sm font-medium hover:text-indigo-600">Home</a>
-                        <a href="#features" className="text-sm font-medium hover:text-indigo-600">Features</a>
-                        <a href="#how-it-works" className="text-sm font-medium hover:text-indigo-600">How It Works</a>
-                        <a href="#pricing" className="text-sm font-medium hover:text-indigo-600">Pricing</a>
-                        <a href="#about" className="text-sm font-medium hover:text-indigo-600">About</a>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                        <Link
-                            to="/login"
-                            className="hidden rounded-lg px-4 py-2 text-sm font-semibold hover:bg-slate-100 sm:block"
-                        >
-                            Login
-                        </Link>
-
-                        <Link
-                            to="/register"
-                            className="rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
-                        >
-                            Get Started
-                        </Link>
-                    </div>
-
+                    <Link
+                        to="/register"
+                        className="rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
+                    >
+                        Get Started
+                    </Link>
                 </div>
+
+            </div>
             </nav>
 
             {/* Hero */}
@@ -272,7 +271,7 @@ export default function Home() {
                     </p>
                     <Link
                         to="/register"
-                        className="mt-8 inline-block rounded-xl bg-white px-8 py-3.5 font-semibold text-indigo-700 transition hover:bg-indigo-50"
+                        className="mt-8 inline-block rounded-xl bg-blue-700 px-8 py-3.5 font-semibold text-indigo-700 transition hover:bg-blue-600"
                     >
                         Create Your Workspace →
                     </Link>
