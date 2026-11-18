@@ -33,7 +33,7 @@ export default function ResetPassword() {
             setLoading(true);
 
             const response = await fetch(
-                `https://efforts-after-renew-lawsuit.trycloudflare.com/api/auth/reset-password/${encodeURIComponent(token)}`,
+                `https://13-239-185-127.sslip.io/api/auth/reset-password/${encodeURIComponent(token)}`,
                 {
                     method: 'POST',
                     headers: {

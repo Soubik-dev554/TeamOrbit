@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || "https://efforts-after-renew-lawsuit.trycloudflare.com/api",
+    baseURL: "https://13-239-185-127.sslip.io/api",
     withCredentials: true
 });
 
