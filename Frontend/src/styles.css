@@ -1093,3 +1093,9 @@ tbody tr:last-child td {
         font-size: 22px
     }
 }
+
+.auth-brand img {
+    width: 360px;
+    height: 100px;
+    object-fit: contain;
+}

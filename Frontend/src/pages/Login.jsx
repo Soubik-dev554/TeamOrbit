@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../api';
 import { useAuth } from '../context/AuthContext';
+import teamorbitLogo from '../assets/teamorbit-logo.png';
 
 const Login = () => {
     const [form, setForm] = useState({
@@ -57,8 +58,11 @@ const Login = () => {
         <div className="auth-page">
 
             <div className="auth-brand">
-                <span className="brand-mark">T</span>
-                TaskFlow
+                <img
+                    src={teamorbitLogo}
+                    alt="TeamOrbit"
+                    className="brand-mark"
+                />
             </div>
 
             <section className="auth-card">
@@ -115,12 +119,12 @@ const Login = () => {
 
                 </form>
 
-                <p className="auth-foot">
-                    New to TaskFlow?{' '}
+        <p className="auth-foot">
+                    New to TeamOrbit?{' '}
                     <Link to="/register">
                         Create an account
                     </Link>
-        </p>
+                </p>
 
             </section>
 

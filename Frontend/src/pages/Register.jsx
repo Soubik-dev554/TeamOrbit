@@ -3,9 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import api from '../api';
 import { useAuth } from '../context/AuthContext';
+import teamorbitLogo from '../assets/teamorbit-logo.png';
 
 const Register = () => {
-
     const [form, setForm] = useState({
         name: '',
         email: '',
@@ -27,10 +27,8 @@ const Register = () => {
     const { setUser } = useAuth();
     const navigate = useNavigate();
 
-
     // OTP resend countdown
     useEffect(() => {
-
         if (countdown <= 0) return;
 
         const timer = setInterval(() => {
@@ -38,26 +36,20 @@ const Register = () => {
         }, 1000);
 
         return () => clearInterval(timer);
-
     }, [countdown]);
-
 
     // Handle input changes
     const handleChange = (e) => {
-
         const { name, value } = e.target;
 
         setForm(prev => ({
             ...prev,
             [name]: value
         }));
-
     };
-
 
     // Step 1: Register Company Admin
     const handleSubmit = async (e) => {
-
         e.preventDefault();
 
         setError('');
@@ -65,61 +57,45 @@ const Register = () => {
         setBusy(true);
 
         try {
-
             const response = await api.post(
                 '/auth/register-organization',
                 form
             );
 
             if (response.data.requiresEmailVerification) {
-
                 setOtpStep(true);
-
                 setNotice(response.data.message);
 
                 // Backend initially applies a 60-second cooldown.
                 setCountdown(60);
-
             } else {
-
                 throw new Error('Unexpected registration response.');
-
             }
 
         } catch (err) {
-
             setError(
                 err.response?.data?.message || err.message
             );
-
         } finally {
-
             setBusy(false);
-
         }
-
     };
-
 
     // Step 2: Verify Email OTP
     const handleVerifyOTP = async (e) => {
-
         e.preventDefault();
 
         setError('');
         setNotice('');
 
         if (!/^\d{6}$/.test(otp)) {
-
             setError('Please enter a valid six-digit OTP.');
             return;
-
         }
 
         setBusy(true);
 
         try {
-
             const response = await api.post(
                 '/auth/verify-email',
                 {
@@ -137,30 +113,22 @@ const Register = () => {
             navigate('/');
 
         } catch (err) {
-
             setError(
                 err.response?.data?.message || err.message
             );
-
         } finally {
-
             setBusy(false);
-
         }
-
     };
-
 
     // Step 3: Resend OTP
     const handleResendOTP = async () => {
-
         setError('');
         setNotice('');
 
         setResendBusy(true);
 
         try {
-
             const response = await api.post(
                 '/auth/resend-otp',
                 {
@@ -175,7 +143,6 @@ const Register = () => {
             );
 
         } catch (err) {
-
             const remainingSeconds =
                 err.response?.data?.remainingSeconds;
 
@@ -186,37 +153,30 @@ const Register = () => {
             setError(
                 err.response?.data?.message || err.message
             );
-
         } finally {
-
             setResendBusy(false);
-
         }
-
     };
-
 
     // Back to registration form
     const handleBack = () => {
-
         setOtpStep(false);
         setOtp('');
 
         setError('');
         setNotice('');
-
     };
 
-
     return (
-
         <div className="auth-page">
 
             <div className="auth-brand">
-                <span className="brand-mark">T</span>
-                TaskFlow
+                <img
+                    src={teamorbitLogo}
+                    alt="TeamOrbit"
+                    className="brand-mark"
+                />
             </div>
-
 
             <section className="auth-card">
 
@@ -224,24 +184,19 @@ const Register = () => {
                     {otpStep ? 'EMAIL VERIFICATION' : 'GET STARTED'}
                 </div>
 
-
                 {!otpStep ? (
-
                     <>
-
                         <h1>Create your account</h1>
 
                         <p className="muted">
                             Your team's next great project starts here.
                         </p>
 
-
                         {error && (
                             <div className="alert">
                                 {error}
                             </div>
                         )}
-
 
                         <form
                             className="form-stack"
@@ -261,7 +216,6 @@ const Register = () => {
                                 />
                             </label>
 
-
                             <label>
                                 Company name
 
@@ -275,7 +229,6 @@ const Register = () => {
                                 />
                             </label>
 
-
                             <label>
                                 Email address
 
@@ -288,7 +241,6 @@ const Register = () => {
                                     required
                                 />
                             </label>
-
 
                             <label>
                                 Password
@@ -304,7 +256,6 @@ const Register = () => {
                                 />
                             </label>
 
-
                             <button
                                 type="submit"
                                 className="btn btn-primary btn-full"
@@ -318,7 +269,6 @@ const Register = () => {
 
                         </form>
 
-
                         <p className="auth-foot">
                             Already have an account?{' '}
 
@@ -328,11 +278,8 @@ const Register = () => {
                         </p>
 
                     </>
-
                 ) : (
-
                     <>
-
                         <h1>Verify your email</h1>
 
                         <p className="muted">
@@ -342,7 +289,6 @@ const Register = () => {
                         <p>
                             <strong>{form.email}</strong>
                         </p>
-
 
                         {error && (
                             <div className="alert">
@@ -355,7 +301,6 @@ const Register = () => {
                                 {notice}
                             </div>
                         )}
-
 
                         <form
                             className="form-stack"
@@ -383,7 +328,6 @@ const Register = () => {
                                 />
                             </label>
 
-
                             <button
                                 type="submit"
                                 className="btn btn-primary btn-full"
@@ -397,18 +341,14 @@ const Register = () => {
 
                         </form>
 
-
                         <div className="auth-foot">
 
                             {countdown > 0 ? (
-
                                 <p>
                                     Resend OTP in{' '}
                                     <strong>{countdown}s</strong>
                                 </p>
-
                             ) : (
-
                                 <button
                                     type="button"
                                     className="btn btn-primary"
@@ -420,14 +360,11 @@ const Register = () => {
                                         : 'Resend OTP'
                                     }
                                 </button>
-
                             )}
 
                         </div>
 
-
                         <p className="auth-foot">
-
                             <button
                                 type="button"
                                 onClick={handleBack}
@@ -435,24 +372,19 @@ const Register = () => {
                             >
                                 Back to registration
                             </button>
-
                         </p>
 
                     </>
-
                 )}
 
             </section>
-
 
             <p className="auth-caption">
                 Plan clearly. Build together. Deliver better.
             </p>
 
         </div>
-
     );
-
 };
 
 export default Register;
